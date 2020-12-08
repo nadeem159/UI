@@ -1,0 +1,170 @@
+<head>
+<style>
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+html{
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    line-height: 1;
+    background-color: #fad1a0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+ul {
+    list-style: none;
+    text-align: center;
+    padding: 5px;
+}
+
+li{
+    color: #4d4638;
+    border-bottom: 1px solid #7a624577;
+    padding: 12px 0;
+    transition: font-size 400ms ease;
+}
+
+li:first-child{
+    border-top: 1px solid #7a624577
+}
+
+li:hover{
+    font-size: 22px;
+}
+
+span{
+    transition: color 200ms ease-in-out;
+
+}
+span:hover{
+    color:  #a87221;
+    cursor: pointer;
+
+}
+
+span.completed:hover{
+    color: #a088695e;
+    cursor: pointer;
+
+}
+
+input {
+    border: 1px solid #7a624577;
+    border-radius: 6px;
+}
+
+#task_btn{
+    background-color:#bd9e77;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    margin: 0 auto;
+    transition: background-color 200ms ease-in-out
+}
+
+#task_btn:hover{
+    background-color:#a08564;
+}
+
+.trash{
+    transition: color 200ms ease;
+}
+
+.trash:hover{
+    color: tomato;
+    cursor: pointer;
+}
+
+.clipboard{
+    padding: 15px;
+}
+
+.title{
+    display: inline-block;
+    color: #bd9e77;
+    font-size: 40px;
+    text-align: center;
+    max-height: 120px;
+    padding-bottom: 15px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    background-color:white;
+    margin: 0;
+	  padding:25px 50px;
+    max-width: 480px;
+    width: 100%;
+    box-shadow:2px 2px 15px #bd9e77;
+}
+
+.input{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.completed{
+    color: #a088695e;
+    text-decoration: line-through;
+}
+
+.deleted{
+    display: none;
+}
+
+
+</style>
+</head>
+<body>
+    <div class="container"> 
+        <div class="title">
+            <i class="clipboard fas fa-clipboard-list"></i><br>
+            <h1>To-Do List</h1><br>
+        </div>
+        
+        <div class="tasks">
+            <ul></ul>
+        </div>
+        <div class="input">
+            <form method="POST">
+                <input type="text" name="To-Do" id="todo_input" value="" required>
+                <button type="submit"  id="task_btn">ADD</button><br> 
+            </form>  
+        <!-- <button id="clr_btn">CLEAR COMPLETED</button> -->
+        </div>  
+    </div>
+    <script src="script.js"></script>  
+</body>
